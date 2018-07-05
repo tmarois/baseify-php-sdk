@@ -1,0 +1,30 @@
+{
+	"description": "Baseify API - PHP SDK",
+	"keywords": ["baseify"],
+	"name": "tmarois/baseify-php-sdk",
+	"homepage": "https://github.com/tmarois/baseify-php-sdk",
+	"type": "package",
+	"licence": "MIT",
+
+    "authors": [
+        {
+            "name": "Timothy Marois",
+            "email": "timothymarois@gmail.com"
+        }
+    ],
+
+	"require": {
+		"php": ">=7.0"
+	},
+
+	"require-dev": {
+		"satooshi/php-coveralls": "^2.0",
+		"phpunit/phpunit": "^6"
+	},
+
+	"autoload": {
+		"psr-4": {
+			"Baseify\\": "src/"
+		}
+	}
+}
