@@ -28,7 +28,7 @@ class Results
     /**
     * $status
     *
-    * @return string
+    * @return bool
     */
     protected $status;
 
@@ -59,7 +59,7 @@ class Results
 
         $this->json = $json;
 
-        $this->status = $this->json['status'] ?? 'error';
+        $this->status = $this->json['success'] ?? false;
 
         $this->message = $this->json['message'] ?? 'error';
 
