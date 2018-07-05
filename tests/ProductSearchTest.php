@@ -23,13 +23,13 @@ class ProductSearchTest extends \PHPUnit\Framework\TestCase
         $results = $baseify->query('car chargers');
 
         $status = $results->getStatus();
-        $product = $results->getProducts();
+        $products = $results->getProducts();
 
-        $this->assertInternalType('object', $product);
-        $this->assertInternalType('array', $product->all());
-        $this->assertInstanceOf(Collection::class, $product);
 
         $this->assertEquals(true, $status);
+        $this->assertInternalType('object', $products);
+        $this->assertInternalType('array', $products->all());
+        $this->assertInstanceOf(Collection::class, $products);
     }
 
 

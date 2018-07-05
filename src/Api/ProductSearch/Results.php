@@ -2,9 +2,10 @@
 
 namespace Baseify\Api\ProductSearch;
 
-use Baseify\Api\ProductSearch;
 use Baseify\Request;
 use Base\Support\Collection;
+use Baseify\Api\ProductSearch;
+use Baseify\Api\ProductSearch\Product;
 
 class Results
 {
@@ -93,7 +94,9 @@ class Results
     */
     public function getProducts()
     {
-        return (new Collection($this->products));
+        return (new Collection($this->products))->map(function($product){
+            return (new Product($product));
+        });
     }
 
 
