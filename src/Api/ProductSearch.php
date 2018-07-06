@@ -146,7 +146,7 @@ class ProductSearch
         }
 
         if ($itemsCount = $this->filter()->get('limit')) {
-            $param['itemsCount'] = $itemsCount;
+            $param['numItems'] = $itemsCount;
         }
 
         return array_merge($this->data, $param);
