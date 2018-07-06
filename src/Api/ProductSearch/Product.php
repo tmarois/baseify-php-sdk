@@ -137,7 +137,7 @@ class Product
     * category
     *
     */
-    public function category()
+    public function categoryName()
     {
         return ($this->productArray['category_name']) ?? '';
     }

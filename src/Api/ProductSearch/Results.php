@@ -31,7 +31,7 @@ class Results
     *
     * @return string
     */
-    protected $feedUri;
+    protected $endpoint;
 
 
     /**
@@ -59,6 +59,22 @@ class Results
 
 
     /**
+    * $categories
+    *
+    * @return array
+    */
+    protected $categories = [];
+
+
+    /**
+    * $stores
+    *
+    * @return array
+    */
+    protected $stores = [];
+
+
+    /**
     * __construct
     *
     */
@@ -68,13 +84,15 @@ class Results
 
         $this->json = $request->output();
 
-        $this->feedUri = $request->getEffectiveUri();
+        $this->endpoint = $request->getEffectiveUri();
 
         $this->status = $this->json['success'] ?? false;
 
         $this->message = $this->json['message'] ?? 'error';
 
-        $this->products = $this->json['info']['items'] ?? [];
+        $this->products = (new Collection(($this->json['info']['items'] ?? [])));
+
+        $this->BuildFilterList();
     }
 
 
@@ -99,12 +117,31 @@ class Results
 
 
     /**
-    * getFeedUri
+    * getEndpoint
     *
     */
-    public function getFeedUri()
+    public function getEndpoint()
     {
-        return $this->feedUri;
+        return $this->endpoint;
+    }
+
+
+    /**
+    * getStores
+    *
+    */
+    public function getStores()
+    {
+        return $this->stores;
+    }
+
+    /**
+    * getCategories
+    *
+    */
+    public function getCategories()
+    {
+        return $this->categores;
     }
 
 
@@ -114,9 +151,30 @@ class Results
     */
     public function getProducts()
     {
-        return (new Collection($this->products))->map(function($product){
+        return $this->products->map(function($product){
             return (new Product($product));
         });
+    }
+
+
+    /**
+    * BuildFilterList
+    *
+    */
+    protected function BuildFilterList()
+    {
+        foreach($this->getProducts() as $product)
+        {
+            if (!in_array($product->storeName(), $this->stores))
+            {
+                $this->stores[] = $product->storeName();
+            }
+
+            if (!in_array($product->categoryName(), $this->categories))
+            {
+                $this->categories[] = $product->categoryName();
+            }
+        }
     }
 
 

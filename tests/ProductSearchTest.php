@@ -25,6 +25,12 @@ class ProductSearchTest extends \PHPUnit\Framework\TestCase
         $status = $results->getStatus();
         $products = $results->getProducts();
 
+        $stores = $results->getStores();
+        // print_r($stores);
+
+        $categories = $results->getCategories();
+        // print_r($categories);
+
 
         $this->assertEquals(true, $status);
         $this->assertInternalType('object', $products);
