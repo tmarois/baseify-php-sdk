@@ -10,7 +10,7 @@ class Filter
     *
     * @var string
     */
-    protected $itemCounts = 15;
+    protected $itemCount = 15;
 
 
     /**

@@ -133,6 +133,22 @@ class ProductSearch
             'ua' => rawurlencode($this->user()->get('ua'))
         ];
 
+        if ($country = $this->user()->get('country')) {
+            $param['country'] = $country;
+        }
+
+        if ($minPrice = $this->filter()->get('minPrice')) {
+            $param['minPrice'] = $minPrice;
+        }
+
+        if ($maxPrice = $this->filter()->get('maxPrice')) {
+            if ($maxPrice != 0) $param['minPrice'] = $maxPrice;
+        }
+
+        if ($itemsCount = $this->filter()->get('itemsCount')) {
+            $param['itemsCount'] = $itemsCount;
+        }
+
         return array_merge($this->data, $param);
     }
 
