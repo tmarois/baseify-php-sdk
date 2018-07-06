@@ -145,7 +145,7 @@ class ProductSearch
             if ($maxPrice != 0) $param['minPrice'] = $maxPrice;
         }
 
-        if ($itemsCount = $this->filter()->get('itemsCount')) {
+        if ($itemsCount = $this->filter()->get('limit')) {
             $param['itemsCount'] = $itemsCount;
         }
 
