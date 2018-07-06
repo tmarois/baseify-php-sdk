@@ -91,6 +91,7 @@ class Results
         $this->message = $this->json['message'] ?? 'error';
 
         $this->products = (new Collection(($this->json['info']['items'] ?? [])));
+        $this->products->sortBy('score','DESC');
 
         $this->BuildFilterList();
     }

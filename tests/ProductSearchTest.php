@@ -19,6 +19,7 @@ class ProductSearchTest extends \PHPUnit\Framework\TestCase
 
         $baseify->user()->set('ip',$testIp);
         $baseify->user()->set('ua',$testAgent);
+        $baseify->filter()->set('limit',2);
 
         $results = $baseify->query('car chargers');
 
@@ -33,6 +34,7 @@ class ProductSearchTest extends \PHPUnit\Framework\TestCase
 
 
         $this->assertEquals(true, $status);
+        $this->assertEquals(2, $products->count());
         $this->assertInternalType('object', $products);
         $this->assertInternalType('array', $products->all());
         $this->assertInstanceOf(Collection::class, $products);
