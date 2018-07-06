@@ -38,6 +38,13 @@ class Request
 
 
     /**
+    * $effectiveUri
+    *
+    */
+    protected $effectiveUri;
+
+
+    /**
     * $statusErrors
     *
     */
@@ -84,6 +91,18 @@ class Request
                 $url = $stats->getEffectiveUri();
             }
         ]);
+
+        $this->effectiveUri = $url;
+    }
+
+
+    /**
+    * getEffectiveUri
+    *
+    */
+    public function getEffectiveUri()
+    {
+        return $this->effectiveUri;
     }
 
 

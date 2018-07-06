@@ -143,7 +143,7 @@ class ProductSearch
     */
     public function query($q)
     {
-        return (new Results($this,((new Request($this->path,$this->p($q)))->output())));
+        return (new Results($this,((new Request($this->path,$this->p($q))))));
     }
 
 }

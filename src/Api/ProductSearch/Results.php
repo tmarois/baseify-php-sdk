@@ -27,6 +27,14 @@ class Results
 
 
     /**
+    * $feedUri
+    *
+    * @return string
+    */
+    protected $feedUri;
+
+
+    /**
     * $status
     *
     * @return bool
@@ -54,11 +62,13 @@ class Results
     * __construct
     *
     */
-    public function __construct(ProductSearch $productSearch, $json = [])
+    public function __construct(ProductSearch $productSearch, Request $request)
     {
         $this->productSearch = $productSearch;
 
-        $this->json = $json;
+        $this->json = $request->output();
+
+        $this->feedUri = $request->getEffectiveUri();
 
         $this->status = $this->json['success'] ?? false;
 
@@ -85,6 +95,16 @@ class Results
     public function getMessage()
     {
         return $this->message;
+    }
+
+
+    /**
+    * getFeedUri
+    *
+    */
+    public function getFeedUri()
+    {
+        return $this->feedUri;
     }
 
 
