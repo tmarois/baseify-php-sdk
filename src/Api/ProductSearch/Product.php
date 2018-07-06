@@ -79,7 +79,7 @@ class Product
     */
     public function score()
     {
-        return ($this->productArray['score']) ?? 0;
+        return round(($this->productArray['score']) ?? 0);
     }
 
 
