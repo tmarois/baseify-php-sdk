@@ -169,14 +169,14 @@ class Results
                 $this->stores[$product->storeName()] = 1;
             }
             else {
-                $this->stores[$product->storeName()] = 1;
+                $this->stores[$product->storeName()] += 1;
             }
 
             if (!isset($this->categories[$product->categoryName()])) {
                 $this->categories[$product->categoryName()] = 1;
             }
             else {
-                $this->categories[$product->categoryName()] = 1;
+                $this->categories[$product->categoryName()] += 1;
             }
         }
     }
