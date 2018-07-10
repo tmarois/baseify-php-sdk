@@ -141,7 +141,7 @@ class Results
     */
     public function getCategories()
     {
-        return $this->categores;
+        return $this->categories;
     }
 
 
