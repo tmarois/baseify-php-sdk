@@ -180,6 +180,7 @@ class Product
             'currency' => $this->currency(),
             'store_name' => $this->storeName(),
             'store_link' => $this->storeLink(),
+            'store_image' => $this->storeImage(),
             'category' => $this->categoryName(),
             'free_shipping' => $this->isFreeShipping()
         ];
