@@ -163,4 +163,36 @@ class Product
     }
 
 
+    /**
+    * toArray
+    *
+    */
+    public function toArray()
+    {
+        return [
+            'title' => $this->title(),
+            'link' => $this->link(),
+            'image' => $this->image(),
+            'id' => $this->id(),
+            'description' => $this->description(),
+            'score' => $this->score(),
+            'price' => $this->price(),
+            'currency' => $this->currency(),
+            'store_name' => $this->storeName(),
+            'store_link' => $this->storeLink(),
+            'category' => $this->categoryName(),
+            'free_shipping' => $this->isFreeShipping()
+        ];
+    }
+
+
+    /**
+    * __toString
+    *
+    */
+    public function __toString()
+    {
+        return json_encode($this->toArray(), 1);
+    }
+
 }

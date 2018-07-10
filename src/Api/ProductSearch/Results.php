@@ -194,4 +194,31 @@ class Results
     }
 
 
+
+    /**
+    * toArray
+    *
+    */
+    public function toArray()
+    {
+        $products = [];
+        foreach($this->getProducts() as $product)
+        {
+            $products[] = $product->toArray();
+        }
+
+        return $products;
+    }
+
+
+    /**
+    * __toString
+    *
+    */
+    public function __toString()
+    {
+        return json_encode($this->toArray(), 1);
+    }
+
+
 }
