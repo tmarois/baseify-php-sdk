@@ -158,6 +158,18 @@ class Results
 
 
     /**
+    * getFilteredProducts
+    *
+    */
+    public function getFilteredProducts($filterName, $filterValue)
+    {
+        return $this->getProducts->map(function($product) use ($filterName, $filterValue){
+            if ($product->$filterName() == $filterValue) return $product;
+        })->filter();
+    }
+
+
+    /**
     * BuildFilterList
     *
     */
