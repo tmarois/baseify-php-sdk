@@ -165,14 +165,18 @@ class Results
     {
         foreach($this->getProducts() as $product)
         {
-            if (!in_array($product->storeName(), $this->stores))
-            {
-                $this->stores[] = $product->storeName();
+            if (!isset($this->stores[$product->storeName()])) {
+                $this->stores[$product->storeName()] = 1;
+            }
+            else {
+                $this->stores[$product->storeName()] = 1;
             }
 
-            if (!in_array($product->categoryName(), $this->categories))
-            {
-                $this->categories[] = $product->categoryName();
+            if (!isset($this->categories[$product->categoryName()])) {
+                $this->categories[$product->categoryName()] = 1;
+            }
+            else {
+                $this->categories[$product->categoryName()] = 1;
             }
         }
     }
