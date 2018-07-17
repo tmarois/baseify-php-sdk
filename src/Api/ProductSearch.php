@@ -126,7 +126,6 @@ class ProductSearch
     protected function p($query)
     {
         $param = [
-            'cuid' => $this->cuid,
             'subid' => $this->subid,
             'kw' => $query,
             'ip' => $this->user()->get('ip'),
