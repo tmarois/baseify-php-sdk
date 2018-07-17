@@ -36,7 +36,7 @@ class ProductSearch
     *
     * @var string
     */
-    protected $path = 'http://search.ocra.info/api/v1/search';
+    protected $path = 'https://search.ocra.info/api/v1/search';
 
 
     /**
