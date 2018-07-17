@@ -13,7 +13,7 @@ class ProductSearchTest extends \PHPUnit\Framework\TestCase
         $testIp = '173.92.179.109';
         $testAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36';
 
-        $baseify = (new Baseify())->productSearch('28a0fd38a28698b4788fcd882544bd16',[
+        $baseify = (new Baseify('28a0fd38a28698b4788fcd882544bd16'))->productSearch([
             'domain' => 'testing.com'
         ]);
 
@@ -32,7 +32,6 @@ class ProductSearchTest extends \PHPUnit\Framework\TestCase
         $categories = $results->getCategories();
         // print_r($categories);
 
-
         $this->assertEquals(true, $status);
         $this->assertEquals(2, $products->count());
         $this->assertInternalType('object', $products);
@@ -47,7 +46,7 @@ class ProductSearchTest extends \PHPUnit\Framework\TestCase
         $testIp = '127.0.0.1';
         $testAgent = 'Test';
 
-        $baseify = (new Baseify())->productSearch('28a0fd38a28698b4788fcd882544bd16');
+        $baseify = (new Baseify('28a0fd38a28698b4788fcd882544bd16'))->productSearch();
 
         $baseify->user()->set('ip',$testIp);
         $baseify->user()->set('ua',$testAgent);

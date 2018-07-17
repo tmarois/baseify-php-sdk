@@ -2,7 +2,7 @@
 
 namespace Baseify\Api;
 
-use Baseify\Request;
+use Baseify\Baseify;
 use Baseify\Api\ProductSearch\User;
 use Baseify\Api\ProductSearch\Filter;
 use Baseify\Api\ProductSearch\Results;
@@ -40,6 +40,14 @@ class ProductSearch
 
 
     /**
+    * $baseify
+    *
+    * @var Baseify\Baseify
+    */
+    protected $baseify;
+
+
+    /**
     * User Details
     *
     * @see Baseify\Api\ProductSearch\User
@@ -55,14 +63,6 @@ class ProductSearch
     * @var object
     */
     protected $filter;
-
-
-    /**
-    * cuid
-    *
-    * @var string
-    */
-    protected $cuid;
 
 
     /**
@@ -85,9 +85,9 @@ class ProductSearch
     * __construct
     *
     */
-    public function __construct($cuid, $data = [])
+    public function __construct(Baseify $baseify, $data = [])
     {
-        $this->cuid = $cuid;
+        $this->baseify = $baseify;
 
         $this->data = $data;
 
@@ -159,7 +159,7 @@ class ProductSearch
     */
     public function query($q)
     {
-        return (new Results($this,((new Request($this->path,$this->p($q))))));
+        return (new Results($this,$this->baseify->request()->send($this->path,$this->p($q))));
     }
 
 }
