@@ -121,6 +121,8 @@ class Request
             ]);
 
             $this->effectiveUri = $url;
+
+            return true;
         }
         catch (\GuzzleHttp\Exception\RequestException $e)
         {
