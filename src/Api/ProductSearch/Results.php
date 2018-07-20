@@ -97,6 +97,16 @@ class Results
 
 
     /**
+    * getRaw
+    *
+    */
+    public function getRaw()
+    {
+        return $this->json;
+    }
+
+
+    /**
     * getStatus
     *
     */

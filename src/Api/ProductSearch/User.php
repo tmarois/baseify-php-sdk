@@ -22,16 +22,6 @@ class User
 
 
     /**
-    * Country
-    *
-    * This is for TESTING PURPOSES
-    *
-    * @var string
-    */
-    protected $country = '';
-
-
-    /**
     * $language
     *
     *

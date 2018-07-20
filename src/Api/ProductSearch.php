@@ -126,6 +126,7 @@ class ProductSearch
     protected function p($query)
     {
         $param = [
+            'show_aecpc' => 'on',
             'subid' => $this->subid,
             'kw' => $query,
             'ip' => $this->user()->get('ip'),

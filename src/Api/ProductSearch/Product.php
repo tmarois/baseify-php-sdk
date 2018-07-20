@@ -164,6 +164,16 @@ class Product
 
 
     /**
+    * eCPC
+    *
+    */
+    public function ecpc()
+    {
+        return ($this->productArray['acpc']) ?? 0;
+    }
+
+
+    /**
     * toArray
     *
     */
@@ -177,6 +187,7 @@ class Product
             'description' => $this->description(),
             'score' => $this->score(),
             'price' => $this->price(),
+            'ecpc' => $this->ecpc(),
             'currency' => $this->currency(),
             'store_name' => $this->storeName(),
             'store_link' => $this->storeLink(),
