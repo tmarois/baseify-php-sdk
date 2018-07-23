@@ -22,6 +22,14 @@ class User
 
 
     /**
+    * Country (for Testing Purposes)
+    *
+    * @var mixed
+    */
+    protected $country = false;
+
+
+    /**
     * $language
     *
     *

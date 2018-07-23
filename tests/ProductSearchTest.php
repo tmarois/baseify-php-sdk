@@ -23,6 +23,8 @@ class ProductSearchTest extends \PHPUnit\Framework\TestCase
 
         $results = $baseify->query('car chargers');
 
+        // print_r($results->getRaw());
+
         $status = $results->getStatus();
         $products = $results->getProducts();
 
