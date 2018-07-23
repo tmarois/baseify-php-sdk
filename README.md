@@ -8,9 +8,8 @@ This API is used for the baseify.com Publisher API for `Product Search`.
 Use `composer require tmarois/baseify-php-sdk`
 
 
-## Basic Usage:
+## Configuration Usage:
 ```php
-
 $baseify = (new Baseify('YOUR_CLIENT_KEY'))->productSearch([
     'domain' => 'yourdomain.com'
 ]);
@@ -22,7 +21,10 @@ $baseify->user()->set('ip',$testIp);
 $baseify->user()->set('ua',$testAgent);
 // how many items do you want to limit this request to
 $baseify->filter()->set('limit',10);
+```
 
+## Query Usage:
+```php
 // send in the query request
 $results = $baseify->query('car chargers');
 
@@ -34,7 +36,6 @@ $products->count();
 
 // get a list of the stores in the results
 $stores = $results->getStores();
-
 ```
 
 ## Resources:
