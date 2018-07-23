@@ -1,5 +1,5 @@
 # baseify-php-sdk
-This API is used for the baseify.com Publisher API for `Product Search`.
+This SDK is used for the baseify.com Publisher API for `Product Search`.
 
 
 ## Installation:
