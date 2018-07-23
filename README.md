@@ -40,6 +40,22 @@ $products->count();
 $stores = $results->getStores();
 ```
 
+## Results:
+
+Using the `query()` method returns `Baseify\Api\ProductSearch\Results`
+
+|Method  |Description |
+|---	 |---		  |
+|`getRaw()`  | Get the raw `JSON` results |
+|`getStatus()` | Get the status of results |
+|`getMessage()` | Get the status message of results |
+|`getEndpoint()` | Get the full API URL Request |
+|`getStores()` | Get an `array` of stores (pulled from products) |
+|`getCategories()` | Get an `array` of categories (pulled from products) |
+|`getProducts()` | Get products returned as a `Collection` object |
+|`toArray()` | Get an array of entire results |
+
+
 ## Product Collection:
 
 The `getProducts()` returns results using the `Collection` object from [basephp\support](https://github.com/basephp/support), here are the highlighted useful methods.
@@ -74,6 +90,7 @@ The `getProducts()` returns results using the `Collection` object from [basephp\
 ## Resources:
 * [Baseify Documentation](https://www.baseify.com/knowledgebase/developers/)
 * [BasePHP Support](https://github.com/basephp/support)
+* [Packagist](https://packagist.org/packages/tmarois/baseify-php-sdk)
 
 
 ## Contributions
