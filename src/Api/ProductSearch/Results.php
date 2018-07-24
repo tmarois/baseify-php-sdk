@@ -150,7 +150,7 @@ class Results
     */
     public function getStores()
     {
-        return $this->stores;
+        return array_filter($this->stores);
     }
 
 
@@ -160,7 +160,7 @@ class Results
     */
     public function getBrands()
     {
-        return $this->brands;
+        return array_filter($this->brands);
     }
 
 
@@ -170,7 +170,7 @@ class Results
     */
     public function getCategories()
     {
-        return $this->categories;
+        return array_filter($this->categories);
     }
 
 
@@ -206,18 +206,24 @@ class Results
     {
         foreach($this->getProducts() as $product)
         {
-            if (!isset($this->stores[$product->storeName()])) {
-                $this->stores[$product->storeName()] = 1;
-            }
-            else {
-                $this->stores[$product->storeName()] += 1;
+            if ($product->storeName() != '')
+            {
+                if (!isset($this->stores[$product->storeName()])) {
+                    $this->stores[$product->storeName()] = 1;
+                }
+                else {
+                    $this->stores[$product->storeName()] += 1;
+                }
             }
 
-            if (!isset($this->brands[$product->brand()])) {
-                $this->brands[$product->brand()] = 1;
-            }
-            else {
-                $this->brands[$product->brand()] += 1;
+            if ($product->brand() != '')
+            {
+                if (!isset($this->brands[$product->brand()])) {
+                    $this->brands[$product->brand()] = 1;
+                }
+                else {
+                    $this->brands[$product->brand()] += 1;
+                }
             }
 
             if ($product->categoryName() != '')

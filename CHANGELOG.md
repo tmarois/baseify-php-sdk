@@ -1,5 +1,11 @@
 # Release Notes
 
+## v1.0.2 (07/24/2018)
+
+### Changed
+* Fixed `brand()`, `stores()`, and `categoryName()` from having empty arrays.
+
+
 ## v1.0.1 (07/24/2018)
 
 ### Added

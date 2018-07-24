@@ -139,7 +139,7 @@ class Product
     */
     public function storeName()
     {
-        return ($this->productArray['store_name']) ?? '';
+        return trim(($this->productArray['store_name']) ?? '');
     }
 
 
@@ -149,7 +149,7 @@ class Product
     */
     public function brand()
     {
-        return ($this->productArray['brand']) ?? '';
+        return trim(($this->productArray['brand']) ?? '');
     }
 
 
@@ -159,7 +159,7 @@ class Product
     */
     public function categoryName()
     {
-        return ($this->productArray['category_name']) ?? '';
+        return trim(($this->productArray['category_name']) ?? '');
     }
 
 
