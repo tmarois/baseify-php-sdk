@@ -75,6 +75,14 @@ class Results
 
 
     /**
+    * $brands
+    *
+    * @return array
+    */
+    protected $brands = [];
+
+
+    /**
     * __construct
     *
     */
@@ -145,6 +153,17 @@ class Results
         return $this->stores;
     }
 
+
+    /**
+    * getStores
+    *
+    */
+    public function getBrands()
+    {
+        return $this->brands;
+    }
+
+
     /**
     * getCategories
     *
@@ -192,6 +211,13 @@ class Results
             }
             else {
                 $this->stores[$product->storeName()] += 1;
+            }
+
+            if (!isset($this->brands[$product->brand()])) {
+                $this->brands[$product->brand()] = 1;
+            }
+            else {
+                $this->brands[$product->brand()] += 1;
             }
 
             if ($product->categoryName() != '')

@@ -94,6 +94,16 @@ class Product
 
 
     /**
+    * listPrice
+    *
+    */
+    public function listPrice()
+    {
+        return ($this->productArray['original_price']) ?? 0;
+    }
+
+
+    /**
     * currency
     *
     */
@@ -130,6 +140,16 @@ class Product
     public function storeName()
     {
         return ($this->productArray['store_name']) ?? '';
+    }
+
+
+    /**
+    * brand
+    *
+    */
+    public function brand()
+    {
+        return ($this->productArray['brand']) ?? '';
     }
 
 
@@ -187,8 +207,10 @@ class Product
             'description' => $this->description(),
             'score' => $this->score(),
             'price' => $this->price(),
+            'list_price' => $this->listPrice(),
             'ecpc' => $this->ecpc(),
             'currency' => $this->currency(),
+            'brand' => $this->brand(),
             'store_name' => $this->storeName(),
             'store_link' => $this->storeLink(),
             'store_image' => $this->storeImage(),
