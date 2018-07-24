@@ -38,6 +38,9 @@ $products->count();
 
 // get a list of the stores in the results
 $stores = $results->getStores();
+
+// get a list of the brands in the results
+$brands = $results->getBrands();
 ```
 
 ## Results:
@@ -51,6 +54,7 @@ Using the `query()` method returns `Baseify\Api\ProductSearch\Results`
 |`getMessage()` | Get the status message of results |
 |`getEndpoint()` | Get the full API URL Request |
 |`getStores()` | Get an `array` of stores (pulled from products) |
+|`getBrands()` | Get an `array` of brands (pulled from products) |
 |`getCategories()` | Get an `array` of categories (pulled from products) |
 |`getProducts()` | Get products returned as a `Collection` object |
 |`toArray()` | Get an array of entire results |
