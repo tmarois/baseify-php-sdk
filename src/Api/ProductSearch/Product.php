@@ -189,7 +189,7 @@ class Product
     */
     public function ecpc()
     {
-        return ($this->productArray['acpc']) ?? 0;
+        return ($this->productArray['aecpc']) ?? 0;
     }
 
 
