@@ -1,6 +1,4 @@
-<?php
-
-namespace Baseify\Api;
+<?php namespace Baseify\Api;
 
 use Baseify\Baseify;
 use Baseify\Api\ProductSearch\User;

@@ -1,6 +1,6 @@
 <?php namespace Baseify\Api;
 
-class Reporting
+class SmartRedirect
 {
 
     /**
@@ -8,7 +8,7 @@ class Reporting
     *
     * @var string
     */
-    protected $path = 'http://publishers.baseify.com/api/stats.php';
+    protected $path = 'https://search.ocra.info/smart-redirect';
 
 
 }
