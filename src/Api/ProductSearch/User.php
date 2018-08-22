@@ -22,6 +22,14 @@ class User
 
 
     /**
+    * Subid
+    *
+    * @var string
+    */
+    protected $subid = 'DEFAULT';
+
+
+    /**
     * Country (for Testing Purposes)
     *
     * @var mixed

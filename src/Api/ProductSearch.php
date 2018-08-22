@@ -64,14 +64,6 @@ class ProductSearch
 
 
     /**
-    * subid
-    *
-    * @var string
-    */
-    protected $subid = 'DEFAULT';
-
-
-    /**
     * data
     *
     * @var array
@@ -125,7 +117,7 @@ class ProductSearch
     {
         $param = [
             'show_aecpc' => 'on',
-            'subid' => $this->subid,
+            'subid' => $this->user()->get('subid'),
             'kw' => $query,
             'ip' => $this->user()->get('ip'),
             'ua' => rawurlencode($this->user()->get('ua'))
