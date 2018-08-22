@@ -3,10 +3,12 @@
 
 ## v1.0.4 (08/22/2018)
 
-### Changed
-* Removed `subid` property (could not use) from the `ProductSearch` class.
+### Added
 * Added `subid` property into the `User` class as a new variable to pass into the API
 * Added `subid` into the API call request. (using `DEFAULT` as the default value)
+
+### Changed
+* Removed `subid` property (could not use) from the `ProductSearch` class.
 
 
 ## v1.0.3 (08/08/2018)
