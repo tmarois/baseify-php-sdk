@@ -1,6 +1,12 @@
 # Release Notes
 
 
+## v1.0.5 (08/28/2018)
+
+### Changed
+* Removed the `filebase` requirement from `composer.json`
+
+
 ## v1.0.4 (08/22/2018)
 
 ### Added
