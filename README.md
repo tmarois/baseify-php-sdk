@@ -41,6 +41,9 @@ $stores = $results->getStores();
 
 // get a list of the brands in the results
 $brands = $results->getBrands();
+
+// get a list of the brands in the results
+$categories = $results->getCategories();
 ```
 
 ## Results:
@@ -98,4 +101,10 @@ The `getProducts()` returns results using the `Collection` object from [basephp\
 
 
 ## Contributions
-Accepting contributions and feedback. Send in any issues and pull requests.
+
+Anyone can contribute to the baseify-php-sdk project. Please do so by posting issues when you've found something that is unexpected or sending a pull request for improvements.
+
+
+## License
+
+baseify-php-sdk is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

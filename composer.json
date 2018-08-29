@@ -16,8 +16,7 @@
 	"require": {
 		"php": ">=7.0",
 		"guzzlehttp/guzzle": "^6.3",
-		"basephp/support" : "1.*",
-		"filebase/filebase": "^1.0"
+		"basephp/support" : "1.*"
 	},
 
 	"require-dev": {

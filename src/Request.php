@@ -2,6 +2,7 @@
 
 use GuzzleHttp\Client as HttpRequest;
 use GuzzleHttp\TransferStats;
+use GuzzleHttp\Exception\RequestException;
 use Exception;
 
 class Request
@@ -124,7 +125,7 @@ class Request
 
             return true;
         }
-        catch (\GuzzleHttp\Exception\RequestException $e)
+        catch (RequestException $e)
         {
              return false;
         }
