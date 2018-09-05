@@ -65,6 +65,13 @@ class Results
     */
     protected $categories = [];
 
+    /**
+    * $categoryIds
+    *
+    * @return array
+    */
+    protected $categoryIds = [];
+
 
     /**
     * $stores
@@ -175,6 +182,16 @@ class Results
 
 
     /**
+    * getCategoryWithIds
+    *
+    */
+    public function getCategoryWithIds()
+    {
+        return array_filter($this->categoryIds);
+    }
+
+
+    /**
     * getProducts
     *
     */
@@ -228,6 +245,11 @@ class Results
 
             if ($product->categoryName() != '')
             {
+                // lets store the category ID + category Name in this array
+                $this->categoryIds[$product->categoryId()] = $product->categoryName();
+
+                // lets store the category and their product counts
+                // we can use this for filters/display for the user
                 if (!isset($this->categories[$product->categoryName()])) {
                     $this->categories[$product->categoryName()] = 1;
                 }
@@ -237,8 +259,6 @@ class Results
             }
         }
     }
-
-
 
     /**
     * toArray
@@ -255,7 +275,6 @@ class Results
         return $products;
     }
 
-
     /**
     * __toString
     *
@@ -264,6 +283,5 @@ class Results
     {
         return json_encode($this->toArray(), 1);
     }
-
 
 }

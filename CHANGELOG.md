@@ -1,6 +1,18 @@
 # Release Notes
 
 
+## v1.0.6 (09/05/2018)
+
+### Added
+* Added `aecpc()` method using the `['aecpc']` on the product array.
+* Added `categoryId()` method to `Product` class.
+* Added `['category_id']` to the `Product` array.
+* Added `getCategoryWithIds()` method on the `Results` class
+
+### Changed
+* Change the `cpc()` method to `ecpc()` using the `['ecpc']`
+
+
 ## v1.0.5 (08/28/2018)
 
 ### Changed

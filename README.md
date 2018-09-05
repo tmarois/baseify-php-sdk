@@ -44,6 +44,7 @@ $brands = $results->getBrands();
 
 // get a list of the brands in the results
 $categories = $results->getCategories();
+
 ```
 
 ## Results:
@@ -59,6 +60,7 @@ Using the `query()` method returns `Baseify\Api\ProductSearch\Results`
 |`getStores()` | Get an `array` of stores (pulled from products) |
 |`getBrands()` | Get an `array` of brands (pulled from products) |
 |`getCategories()` | Get an `array` of categories (pulled from products) |
+|`getCategoryWithIds()` | Get the categories and the category ids |
 |`getProducts()` | Get products returned as a `Collection` object |
 |`toArray()` | Get an array of entire results |
 

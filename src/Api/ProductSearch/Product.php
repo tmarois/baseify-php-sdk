@@ -154,6 +154,16 @@ class Product
 
 
     /**
+    * categoryId
+    *
+    */
+    public function categoryId()
+    {
+        return (($this->productArray['category_id']) ?? '');
+    }
+
+
+    /**
     * category
     *
     */
@@ -184,12 +194,22 @@ class Product
 
 
     /**
-    * eCPC
+    * aecpc
+    *
+    */
+    public function aecpc()
+    {
+        return ($this->productArray['aecpc']) ?? 0;
+    }
+
+
+    /**
+    * ecpc
     *
     */
     public function ecpc()
     {
-        return ($this->productArray['aecpc']) ?? 0;
+        return ($this->productArray['ecpc']) ?? 0;
     }
 
 
@@ -209,12 +229,14 @@ class Product
             'price' => $this->price(),
             'list_price' => $this->listPrice(),
             'ecpc' => $this->ecpc(),
+            'aecpc' => $this->aecpc(),
             'currency' => $this->currency(),
             'brand' => $this->brand(),
             'store_name' => $this->storeName(),
             'store_link' => $this->storeLink(),
             'store_image' => $this->storeImage(),
             'category' => $this->categoryName(),
+            'category_id' => $this->categoryId(),
             'free_shipping' => $this->isFreeShipping()
         ];
     }
