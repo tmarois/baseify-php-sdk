@@ -139,7 +139,11 @@ class Product
     */
     public function storeName()
     {
-        return trim(($this->productArray['store_name']) ?? '');
+        // Due to array being passed in brand, lets double check this one
+        $store = ($this->productArray['store_name']) ?? '';
+        if (is_array($store)) $store = implode(' ', $store);
+
+        return trim($store);
     }
 
 
@@ -149,7 +153,11 @@ class Product
     */
     public function brand()
     {
-        return trim(($this->productArray['brand']) ?? '');
+        // for some reason brand can have an array passed back???
+        $brand = ($this->productArray['brand']) ?? '';
+        if (is_array($brand)) $brand = implode(' ', $brand);
+
+        return trim($brand);
     }
 
 
@@ -169,7 +177,11 @@ class Product
     */
     public function categoryName()
     {
-        return trim(($this->productArray['category_name']) ?? '');
+        // Due to array being passed in brand, lets double check this one
+        $category = ($this->productArray['category_name']) ?? '';
+        if (is_array($category)) $category = implode(' ', $category);
+
+        return trim($category);
     }
 
 

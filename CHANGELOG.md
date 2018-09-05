@@ -1,6 +1,12 @@
 # Release Notes
 
 
+## v1.0.7 (09/05/2018)
+
+### Changed
+* Fixed `storeName()`, `brand()`, and `categoryName()` from causing an error when passed an array. There should be no array, but for some reason the API decided to send array through brands, lets fix that issue by converting an array to string.
+
+
 ## v1.0.6 (09/05/2018)
 
 ### Added
