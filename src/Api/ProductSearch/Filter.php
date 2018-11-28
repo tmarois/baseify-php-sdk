@@ -38,6 +38,14 @@ class Filter
 
 
     /**
+    * $queryId
+    *
+    * @var string
+    */
+    protected $queryId = '';
+
+
+    /**
     * get method
     *
     */

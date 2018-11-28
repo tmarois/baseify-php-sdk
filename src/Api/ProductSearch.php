@@ -139,6 +139,10 @@ class ProductSearch
             $param['numItems'] = $itemsCount;
         }
 
+        if ($queryId = $this->filter()->get('queryId')) {
+            $param['query_id'] = $queryId;
+        }
+
         return array_merge($this->data, $param);
     }
 
